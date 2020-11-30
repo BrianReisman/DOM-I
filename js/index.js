@@ -61,6 +61,12 @@ const CTAtext = document.querySelector('.cta-text');
 const CTAh1 = CTAtext.querySelector('h1');
 CTAh1.textContent = siteContent.cta.h1;
 
+const split = CTAh1.textContent.split(' ');
+console.log(split);
+rejoined = split.join('<br>');
+console.log(rejoined);
+CTAh1.innerHTML = rejoined;
+
 const CTAbtn = CTAtext.querySelector('button');
 CTAbtn.textContent = siteContent.cta.button;
 
@@ -115,11 +121,16 @@ contactp2.textContent = siteContent['contact']['phone'];
 const contactp3 = contactp2.nextElementSibling;
 contactp3.textContent = siteContent['contact']['email'];
 
+// console.log(contactp1.textContent);
+const contactp1Split = contactp1.textContent.split('Street');
+// console.log(contactp1Split);
+contactp1Split.splice(1, 0, 'Street<br>')
+// console.log(contactp1Split);
+const joined = contactp1Split.join('');
+// console.log(joined);
+contactp1.innerHTML = joined;
+
 //footer
 const footer = document.querySelector('footer');
 const footerP = footer.querySelector('p');
 footerP.textContent = siteContent['footer']['copyright'];
-
-console.log(bottomContent3);
-console.log(bottomContent3h4);
-console.log(bottomContent3p);
